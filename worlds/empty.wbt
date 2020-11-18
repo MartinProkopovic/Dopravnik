@@ -12,4 +12,5 @@ TexturedBackgroundLight {
 }
 RectangleArena {
   translation 0 -0.14 0
+  floorSize 10 10
 }
