@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.3338601575276063 -0.9295095460721883 -0.15668247820454043 4.485324158804546
-  position 3.210130893194954 0.9133726834868109 -0.09795024161187833
+  orientation -0.012812621863402615 0.986060781881088 0.16589144389341576 3.211115918037805
+  position 0.943800893057651 0.3725064333745135 0.13591932911695292
 }
 TexturedBackground {
 }
@@ -13,6 +13,36 @@ TexturedBackgroundLight {
 RectangleArena {
   translation 0.17 -0.14 -0.09
   floorSize 10 10
+}
+TinkerbotsBase {
+  translation 1.14 0 0.88
+  name "Tinkerbots(3)"
+  backSlot TinkerbotsCube {
+    leftSlot TinkerbotsCube {
+      backSlot TinkerbotsMotor {
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    rightSlot TinkerbotsCube {
+      backSlot TinkerbotsMotor {
+        rightSlot TinkerbotsDistanceSensor {
+          rotation 0 0 1 -1.5707996938995747
+        }
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    frontASlot TinkerbotsFinger {
+      rotation 0 0 1 1.5707996938995747
+    }
+    frontDSlot TinkerbotsFinger {
+    }
+  }
 }
 TinkerbotsBase {
   translation 0.36 0.0100006 -0.11
@@ -174,10 +204,11 @@ TinkerbotsBase {
   }
 }
 ConveyorBelt {
-  translation 0 -0.15 0.09
+  translation 0.02 -0.15 0.09
   size 2 0.04 0.15
   borderThickness 0.005
   borderHeight 0.004
+  speed -0.5
 }
 ConveyorBelt {
   translation 0.02 -0.15 0.51
@@ -185,7 +216,6 @@ ConveyorBelt {
   size 2 0.04 0.15
   borderThickness 0.005
   borderHeight 0.004
-  speed -0.5
 }
 ConveyorBelt {
   translation 0.01 -0.15 -0.32
@@ -193,5 +223,16 @@ ConveyorBelt {
   size 2 0.04 0.15
   borderThickness 0.005
   borderHeight 0.004
-  speed -0.5
+}
+SolidBox {
+  translation 0 0 0.08
+  size 0.03 0.03 0.03
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    damping Damping {
+    }
+  }
 }
