@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.3338601575276063 -0.9295095460721883 -0.15668247820454043 4.485324158804546
-  position 3.210130893194954 0.9133726834868109 -0.09795024161187833
+  orientation -0.17824063173768953 0.9547870038250863 0.2379328781914428 2.0471066048001103
+  position 4.127883516564868 1.8790888767369098 -1.6805944496883094
 }
 TexturedBackground {
 }
@@ -13,6 +13,261 @@ TexturedBackgroundLight {
 RectangleArena {
   translation 0.17 -0.14 -0.09
   floorSize 10 10
+}
+ConveyorBelt {
+  translation 2.35 -0.15 0.09
+  name "conveyor belt(3)"
+  size 2 0.06 0.15
+  borderThickness 0.001
+  borderHeight -0.01
+  speed -0.5
+}
+SolidBox {
+  translation 0.49293 0 0.507071
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(3)"
+  size 0.03 0.03 0.03
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 1
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.71293 0 0.507071
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(4)"
+  size 0.03 0.03 0.03
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 1
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.91293 0 0.507071
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(5)"
+  size 0.03 0.03 0.03
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 1
+    damping Damping {
+    }
+  }
+}
+ConveyorBelt {
+  translation 0.11 -0.15 0.5
+  name "conveyor belt(1)"
+  size 2 0.06 0.15
+  borderThickness 0.001
+  borderHeight -0.01
+  speed 0.05
+}
+SolidBox {
+  translation -0.22707 0 0.507072
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(1)"
+  size 0.03 0.03 0.03
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 1
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.2 0 0.51
+  name "box(2)"
+  size 0.03 0.03 0.03
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 1
+    damping Damping {
+    }
+  }
+}
+TinkerbotsBase {
+  translation 1.13 0 -0.58
+  rotation 0 1 0 3.14159
+  name "Car(1)"
+  backSlot TinkerbotsCube {
+    leftSlot TinkerbotsCube {
+      name "(1)"
+      backSlot TinkerbotsMotor {
+        upASlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 3.141592653589793
+        }
+        upBSlot TinkerbotsCubieMaleCube {
+          upSlot TinkerbotsCubieTriangle {
+            rotation 0 0 1 -1.5707996938995747
+          }
+        }
+        upCSlot TinkerbotsCubieMaleCube {
+          upSlot TinkerbotsCubieTriangle {
+          }
+        }
+        upDSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5707996938995747
+        }
+        leftSlot TinkerbotsDistanceSensor {
+          rotation 0 0 1 1.5707996938995747
+        }
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    rightSlot TinkerbotsCube {
+      backSlot TinkerbotsMotor {
+        upASlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 3.141592653589793
+        }
+        upBSlot TinkerbotsCubieMaleCube {
+          upSlot TinkerbotsCubieTriangle {
+            rotation 0 0 1 -1.5707996938995747
+          }
+        }
+        upCSlot TinkerbotsCubieMaleCube {
+          upSlot TinkerbotsCubieTriangle {
+          }
+        }
+        upDSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5707996938995747
+        }
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    frontASlot TinkerbotsFinger {
+      rotation 0 0 1 1.5707996938995747
+      name "finger(1)"
+    }
+    frontDSlot TinkerbotsFinger {
+    }
+    backASlot TinkerbotsCubieMaleCube {
+      name "male cube cubie(1)"
+      upSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 -1.5708003061004252
+      }
+    }
+    backBSlot TinkerbotsCubieMaleCube {
+      name "male cube cubie(2)"
+      upSlot TinkerbotsCubieTriangle {
+      }
+    }
+    backCSlot TinkerbotsCubieMaleCube {
+      name "male cube cubie(3)"
+      upSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 -1.5707996938995747
+      }
+    }
+    backDSlot TinkerbotsCubieMaleCube {
+      upSlot TinkerbotsCubieTriangle {
+      }
+    }
+  }
+}
+TinkerbotsBase {
+  translation 1.32 -0.07 0.75
+  name "Car"
+  backSlot TinkerbotsCube {
+    leftSlot TinkerbotsCube {
+      backSlot TinkerbotsMotor {
+        upASlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 3.141592653589793
+        }
+        upBSlot TinkerbotsCubieFemaleCube {
+          upSlot TinkerbotsCubieTriangle {
+            rotation 0 0 1 -1.5707996938995747
+          }
+        }
+        upCSlot TinkerbotsCubieMaleCube {
+          upSlot TinkerbotsCubieTriangle {
+          }
+        }
+        upDSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5707996938995747
+        }
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    rightSlot TinkerbotsCube {
+      backSlot TinkerbotsMotor {
+        upASlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 3.141592653589793
+        }
+        upBSlot TinkerbotsCubieMaleCube {
+          upSlot TinkerbotsCubieTriangle {
+            rotation 0 0 1 -1.5707996938995747
+          }
+        }
+        upCSlot TinkerbotsCubieMaleCube {
+          upSlot TinkerbotsCubieTriangle {
+          }
+        }
+        upDSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5708003061004252
+        }
+        rightSlot TinkerbotsDistanceSensor {
+          rotation 0 0 1 -1.5707996938995747
+        }
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    frontASlot TinkerbotsFinger {
+      rotation 0 0 1 1.5707996938995747
+    }
+    frontDSlot TinkerbotsFinger {
+    }
+    backASlot TinkerbotsCubieMaleCube {
+      upSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 -1.5708003061004252
+      }
+    }
+    backBSlot TinkerbotsCubieMaleCube {
+      upSlot TinkerbotsCubieTriangle {
+      }
+    }
+    backCSlot TinkerbotsCubieMaleCube {
+      upSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 -1.5707996938995747
+      }
+    }
+    backDSlot TinkerbotsCubieMaleCube {
+      upSlot TinkerbotsCubieTriangle {
+      }
+    }
+  }
 }
 TinkerbotsBase {
   translation 0.36 0.0100006 -0.11
@@ -64,9 +319,10 @@ TinkerbotsBase {
   }
 }
 TinkerbotsBase {
-  translation 1.19 0.0100004 0.09
+  translation 1.17 1.93475e-06 0.0899999
   rotation -3.3905113482557537e-09 0.707108281185553 0.70710528118436 3.14159
   name "Tinkerbots(2)"
+  controller "grabber_1"
   leftSlot TinkerbotsCube {
     upSlot TinkerbotsCube {
       upSlot TinkerbotsPivot {
@@ -87,6 +343,9 @@ TinkerbotsBase {
       slot TinkerbotsCube {
         leftSlot TinkerbotsCube {
           name "(1)"
+          rightSlot TinkerbotsDistanceSensor {
+            rotation 0 0 1 -1.570795613280012
+          }
         }
         rightSlot TinkerbotsCube {
           name "(2)"
@@ -102,6 +361,8 @@ TinkerbotsBase {
             backSlot TinkerbotsCube {
             }
           }
+          backSlot TinkerbotsDistanceSensor {
+          }
         }
         backSlot TinkerbotsCube {
           leftSlot TinkerbotsCube {
@@ -112,6 +373,9 @@ TinkerbotsBase {
           rightSlot TinkerbotsCube {
             frontSlot TinkerbotsCube {
             }
+          }
+          frontSlot TinkerbotsDistanceSensor {
+            rotation 0 0 1 3.141592653589793
           }
         }
       }
@@ -174,15 +438,8 @@ TinkerbotsBase {
   }
 }
 ConveyorBelt {
-  translation 0 -0.15 0.09
-  size 2 0.04 0.15
-  borderThickness 0.005
-  borderHeight 0.004
-}
-ConveyorBelt {
-  translation 0.02 -0.15 0.51
-  name "conveyor belt(1)"
-  size 2 0.04 0.15
+  translation 0.02 -0.15 0.09
+  size 2 0.02 0.15
   borderThickness 0.005
   borderHeight 0.004
   speed -0.5
@@ -190,8 +447,21 @@ ConveyorBelt {
 ConveyorBelt {
   translation 0.01 -0.15 -0.32
   name "conveyor belt(2)"
-  size 2 0.04 0.15
-  borderThickness 0.005
-  borderHeight 0.004
-  speed -0.5
+  size 2 0.06 0.15
+  borderThickness 0.001
+  borderHeight -0.01
+  speed 0.05
+}
+SolidBox {
+  translation 0 0 0.51
+  size 0.03 0.03 0.03
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 1
+    damping Damping {
+    }
+  }
 }
