@@ -3,14 +3,195 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.3367711544879721 0.9298910107999289 0.14794558979004674 0.6860479374952209
-  position 4.570145793279862 1.3636136665221448 6.7664786402684065
+  orientation 0.3338601575276063 -0.9295095460721883 -0.15668247820454043 4.485324158804546
+  position 3.210130893194954 0.9133726834868109 -0.09795024161187833
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
-  translation 0 -0.14 0
+  translation 0.17 -0.14 -0.09
   floorSize 10 10
+}
+TinkerbotsBase {
+  translation 0.36 0.0100006 -0.11
+  rotation -1 0 0 1.5708
+  leftSlot TinkerbotsCube {
+    upSlot TinkerbotsCube {
+      upSlot TinkerbotsPivot {
+        rotation 0 0 1 1.5707996938995747
+        slot TinkerbotsPivot {
+          slot TinkerbotsGrabber {
+            fingerASlot TinkerbotsFinger {
+            }
+            fingerBSlot TinkerbotsFinger {
+            }
+            fingerCSlot TinkerbotsFinger {
+            }
+          }
+        }
+      }
+    }
+    leftSlot TinkerbotsTwister {
+      slot TinkerbotsCube {
+        leftSlot TinkerbotsCube {
+        }
+        rightSlot TinkerbotsCube {
+        }
+        frontSlot TinkerbotsCube {
+          leftSlot TinkerbotsCube {
+            backSlot TinkerbotsCube {
+            }
+          }
+          rightSlot TinkerbotsCube {
+            backSlot TinkerbotsCube {
+            }
+          }
+        }
+        backSlot TinkerbotsCube {
+          leftSlot TinkerbotsCube {
+            frontSlot TinkerbotsCube {
+            }
+          }
+          rightSlot TinkerbotsCube {
+            frontSlot TinkerbotsCube {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+TinkerbotsBase {
+  translation 1.19 0.0100004 0.09
+  rotation -3.3905113482557537e-09 0.707108281185553 0.70710528118436 3.14159
+  name "Tinkerbots(2)"
+  leftSlot TinkerbotsCube {
+    upSlot TinkerbotsCube {
+      upSlot TinkerbotsPivot {
+        rotation 0 0 1 1.5707996938995747
+        slot TinkerbotsPivot {
+          slot TinkerbotsGrabber {
+            fingerASlot TinkerbotsFinger {
+            }
+            fingerBSlot TinkerbotsFinger {
+            }
+            fingerCSlot TinkerbotsFinger {
+            }
+          }
+        }
+      }
+    }
+    leftSlot TinkerbotsTwister {
+      slot TinkerbotsCube {
+        leftSlot TinkerbotsCube {
+          name "(1)"
+        }
+        rightSlot TinkerbotsCube {
+          name "(2)"
+        }
+        frontSlot TinkerbotsCube {
+          name "(3)"
+          leftSlot TinkerbotsCube {
+            name "(1)"
+            backSlot TinkerbotsCube {
+            }
+          }
+          rightSlot TinkerbotsCube {
+            backSlot TinkerbotsCube {
+            }
+          }
+        }
+        backSlot TinkerbotsCube {
+          leftSlot TinkerbotsCube {
+            name "(1)"
+            frontSlot TinkerbotsCube {
+            }
+          }
+          rightSlot TinkerbotsCube {
+            frontSlot TinkerbotsCube {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+TinkerbotsBase {
+  translation -0.07 0.0100011 0.3
+  rotation -1 0 0 1.5708
+  name "Tinkerbots(1)"
+  leftSlot TinkerbotsCube {
+    upSlot TinkerbotsCube {
+      upSlot TinkerbotsPivot {
+        rotation 0 0 1 1.5707996938995747
+        slot TinkerbotsPivot {
+          slot TinkerbotsGrabber {
+            fingerASlot TinkerbotsFinger {
+            }
+            fingerBSlot TinkerbotsFinger {
+            }
+            fingerCSlot TinkerbotsFinger {
+            }
+          }
+        }
+      }
+    }
+    leftSlot TinkerbotsTwister {
+      slot TinkerbotsCube {
+        leftSlot TinkerbotsCube {
+          name "(1)"
+        }
+        rightSlot TinkerbotsCube {
+          name "(2)"
+        }
+        frontSlot TinkerbotsCube {
+          name "(3)"
+          leftSlot TinkerbotsCube {
+            name "(1)"
+            backSlot TinkerbotsCube {
+            }
+          }
+          rightSlot TinkerbotsCube {
+            backSlot TinkerbotsCube {
+            }
+          }
+        }
+        backSlot TinkerbotsCube {
+          leftSlot TinkerbotsCube {
+            name "(1)"
+            frontSlot TinkerbotsCube {
+            }
+          }
+          rightSlot TinkerbotsCube {
+            frontSlot TinkerbotsCube {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+ConveyorBelt {
+  translation 0 -0.15 0.09
+  size 2 0.04 0.15
+  borderThickness 0.005
+  borderHeight 0.004
+}
+ConveyorBelt {
+  translation 0.02 -0.15 0.51
+  name "conveyor belt(1)"
+  size 2 0.04 0.15
+  borderThickness 0.005
+  borderHeight 0.004
+  speed -0.5
+}
+ConveyorBelt {
+  translation 0.01 -0.15 -0.32
+  name "conveyor belt(2)"
+  size 2 0.04 0.15
+  borderThickness 0.005
+  borderHeight 0.004
+  speed -0.5
 }
