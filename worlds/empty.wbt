@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.17824063173768953 0.9547870038250863 0.2379328781914428 2.0471066048001103
-  position 4.127883516564868 1.8790888767369098 -1.6805944496883094
+  orientation -0.00826126440092919 -0.9999643458643662 0.0017488597851352033 1.6028673316014876
+  position 0.8188476704963182 -0.014651420938008535 0.09216141593936013
 }
 TexturedBackground {
 }
@@ -13,14 +13,6 @@ TexturedBackgroundLight {
 RectangleArena {
   translation 0.17 -0.14 -0.09
   floorSize 10 10
-}
-ConveyorBelt {
-  translation 2.35 -0.15 0.09
-  name "conveyor belt(3)"
-  size 2 0.06 0.15
-  borderThickness 0.001
-  borderHeight -0.01
-  speed -0.5
 }
 SolidBox {
   translation 0.49293 0 0.507071
@@ -39,7 +31,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.71293 0 0.507071
+  translation 0.71293 -0.11 0.067071
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.03 0.03 0.03
@@ -55,31 +47,32 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.91293 0 0.507071
+  translation 1.10293 -0.12 0.45707
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(5)"
-  size 0.03 0.03 0.03
+  size 0.02 0.02 0.02
   appearance PBRAppearance {
     baseColor 0 0 0
     roughness 0.5
     metalness 0
   }
   physics Physics {
-    density 1
+    density 2
+    mass 0.007
     damping Damping {
     }
   }
 }
 ConveyorBelt {
-  translation 0.11 -0.15 0.5
+  translation 0.02 -0.15 0.55
   name "conveyor belt(1)"
-  size 2 0.06 0.15
+  size 2 0.04 0.15
   borderThickness 0.001
   borderHeight -0.01
-  speed 0.05
+  speed 0
 }
 SolidBox {
-  translation -0.22707 0 0.507072
+  translation -0.22707 0 -0.382928
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(1)"
   size 0.03 0.03 0.03
@@ -94,7 +87,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.2 0 0.51
+  translation 1.1 -0.12 -0.05
   name "box(2)"
   size 0.03 0.03 0.03
   appearance PBRAppearance {
@@ -108,9 +101,10 @@ SolidBox {
   }
 }
 TinkerbotsBase {
-  translation 1.13 0 -0.58
+  translation 1.13 -0.06 -0.58
   rotation 0 1 0 3.14159
   name "Car(1)"
+  controller ""
   backSlot TinkerbotsCube {
     leftSlot TinkerbotsCube {
       name "(1)"
@@ -192,27 +186,30 @@ TinkerbotsBase {
   }
 }
 TinkerbotsBase {
-  translation 1.32 -0.07 0.75
+  translation 1.1 -0.07 0.72
   name "Car"
+  controller "vehicle"
   backSlot TinkerbotsCube {
     leftSlot TinkerbotsCube {
       backSlot TinkerbotsMotor {
-        upASlot TinkerbotsCubieTriangle {
-          rotation 0 0 1 3.141592653589793
-        }
-        upBSlot TinkerbotsCubieFemaleCube {
-          upSlot TinkerbotsCubieTriangle {
-            rotation 0 0 1 -1.5707996938995747
-          }
-        }
-        upCSlot TinkerbotsCubieMaleCube {
+        rotation 0 0 1 -3.141592653589793
+        name "motor_right"
+        upASlot TinkerbotsCubieFemaleCube {
           upSlot TinkerbotsCubieTriangle {
           }
         }
-        upDSlot TinkerbotsCubieTriangle {
+        upBSlot TinkerbotsCubieTriangle {
           rotation 0 0 1 1.5707996938995747
         }
-        frontSlot TinkerbotsAxle {
+        upCSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 -3.141592653589793
+        }
+        upDSlot TinkerbotsCubieFemaleCube {
+          upSlot TinkerbotsCubieTriangle {
+            rotation 0 0 1 -1.5708003061004252
+          }
+        }
+        backSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
           }
         }
@@ -220,6 +217,7 @@ TinkerbotsBase {
     }
     rightSlot TinkerbotsCube {
       backSlot TinkerbotsMotor {
+        name "motor_left"
         upASlot TinkerbotsCubieTriangle {
           rotation 0 0 1 3.141592653589793
         }
@@ -237,6 +235,7 @@ TinkerbotsBase {
         }
         rightSlot TinkerbotsDistanceSensor {
           rotation 0 0 1 -1.5707996938995747
+          name "dsc"
         }
         frontSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
@@ -270,8 +269,9 @@ TinkerbotsBase {
   }
 }
 TinkerbotsBase {
-  translation 0.36 0.0100006 -0.11
+  translation -0.04 0.0100006 -0.11
   rotation -1 0 0 1.5708
+  controller ""
   leftSlot TinkerbotsCube {
     upSlot TinkerbotsCube {
       upSlot TinkerbotsPivot {
@@ -319,16 +319,20 @@ TinkerbotsBase {
   }
 }
 TinkerbotsBase {
-  translation 1.17 1.93475e-06 0.0899999
+  translation 1.14 -0.0199981 0.0899999
   rotation -3.3905113482557537e-09 0.707108281185553 0.70710528118436 3.14159
-  name "Tinkerbots(2)"
+  name "first_grabber"
   controller "grabber_1"
   leftSlot TinkerbotsCube {
+    rotation 1 0 0 0
     upSlot TinkerbotsCube {
       upSlot TinkerbotsPivot {
         rotation 0 0 1 1.5707996938995747
+        name "pivot A"
         slot TinkerbotsPivot {
+          name "pivot B"
           slot TinkerbotsGrabber {
+            rotation 0 0 1 -2.094395001079161
             fingerASlot TinkerbotsFinger {
             }
             fingerBSlot TinkerbotsFinger {
@@ -343,39 +347,59 @@ TinkerbotsBase {
       slot TinkerbotsCube {
         leftSlot TinkerbotsCube {
           name "(1)"
-          rightSlot TinkerbotsDistanceSensor {
-            rotation 0 0 1 -1.570795613280012
+          backSlot TinkerbotsCube {
+            rightASlot TinkerbotsCubieFemaleCube {
+            }
+            rightBSlot TinkerbotsCubieFemaleCube {
+            }
+            rightCSlot TinkerbotsCubieFemaleCube {
+            }
+            rightDSlot TinkerbotsCubieFemaleCube {
+            }
+            backSlot TinkerbotsDistanceSensor {
+              name "DS_R"
+              upSlot TinkerbotsCube {
+                leftSlot TinkerbotsCube {
+                }
+                rightASlot TinkerbotsCubieFemaleCube {
+                }
+                rightBSlot TinkerbotsCubieFemaleCube {
+                }
+                rightCSlot TinkerbotsCubieFemaleCube {
+                }
+                rightDSlot TinkerbotsCubieFemaleCube {
+                }
+              }
+            }
           }
         }
         rightSlot TinkerbotsCube {
           name "(2)"
-        }
-        frontSlot TinkerbotsCube {
-          name "(3)"
-          leftSlot TinkerbotsCube {
-            name "(1)"
-            backSlot TinkerbotsCube {
+          frontSlot TinkerbotsCube {
+            leftASlot TinkerbotsCubieFemaleCube {
             }
-          }
-          rightSlot TinkerbotsCube {
-            backSlot TinkerbotsCube {
+            leftBSlot TinkerbotsCubieFemaleCube {
             }
-          }
-          backSlot TinkerbotsDistanceSensor {
-          }
-        }
-        backSlot TinkerbotsCube {
-          leftSlot TinkerbotsCube {
-            name "(1)"
-            frontSlot TinkerbotsCube {
+            leftCSlot TinkerbotsCubieFemaleCube {
             }
-          }
-          rightSlot TinkerbotsCube {
-            frontSlot TinkerbotsCube {
+            leftDSlot TinkerbotsCubieFemaleCube {
             }
-          }
-          frontSlot TinkerbotsDistanceSensor {
-            rotation 0 0 1 3.141592653589793
+            rightSlot TinkerbotsCube {
+            }
+            frontSlot TinkerbotsDistanceSensor {
+              rotation 0 0 -1 3.141592653589793
+              name "DS_L"
+              upSlot TinkerbotsCube {
+                rightASlot TinkerbotsCubieFemaleCube {
+                }
+                rightBSlot TinkerbotsCubieFemaleCube {
+                }
+                rightCSlot TinkerbotsCubieFemaleCube {
+                }
+                rightDSlot TinkerbotsCubieFemaleCube {
+                }
+              }
+            }
           }
         }
       }
@@ -383,9 +407,10 @@ TinkerbotsBase {
   }
 }
 TinkerbotsBase {
-  translation -0.07 0.0100011 0.3
+  translation -0.54 0.0100011 0.3
   rotation -1 0 0 1.5708
   name "Tinkerbots(1)"
+  controller ""
   leftSlot TinkerbotsCube {
     upSlot TinkerbotsCube {
       upSlot TinkerbotsPivot {
@@ -447,13 +472,13 @@ ConveyorBelt {
 ConveyorBelt {
   translation 0.01 -0.15 -0.32
   name "conveyor belt(2)"
-  size 2 0.06 0.15
+  size 2 0.04 0.15
   borderThickness 0.001
   borderHeight -0.01
-  speed 0.05
+  speed 0
 }
 SolidBox {
-  translation 0 0 0.51
+  translation 0.34 0 -0.33
   size 0.03 0.03 0.03
   appearance PBRAppearance {
     roughness 0.5
