@@ -34,7 +34,7 @@ D=wb_distance_sensor_get_value(c);
 if D > 51 & t==0
   wb_motor_set_position(motor_l,p);
   wb_motor_set_position(motor_r,p);
-  wait_a_whil(0.3,TIME_STEP);
+  pause(0.3,TIME_STEP);
   p=p-1;
   end
   if D < 51
@@ -58,13 +58,13 @@ end
   drawnow;
 
 end
-function wait_a_whil(time_in_seconds,wait) 
+function pause(time_s,wait) 
  start_time = wb_robot_get_time();
-  while (start_time + time_in_seconds > wb_robot_get_time())
-    ste(wait);
+  while (start_time + time_s > wb_robot_get_time())
+    step(wait);
     end
 end
-function ste(t) 
+function step(t) 
   if (wb_robot_step(t) == -1) 
     wb_robot_cleanup();
 
