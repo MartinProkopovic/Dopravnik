@@ -61,7 +61,11 @@ end
 function pause(time_s,wait) 
  start_time = wb_robot_get_time();
   while (start_time + time_s > wb_robot_get_time())
+<<<<<<< HEAD
     step(wait);
+=======
+    ste(wait);
+>>>>>>> 7980a182456325be71707679339721112803d872
     end
 end
 function step(t) 
