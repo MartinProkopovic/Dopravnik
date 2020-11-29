@@ -41,35 +41,35 @@ while wb_robot_step(TIME_STEP) ~= -1
 dS=wb_distance_sensor_get_value(DS_L);
  
 if dS < 45
-wait_a_while(2.0,TIME_STEP);
+pause(2.0,TIME_STEP);
 wb_motor_set_position(twister,-1.57);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(finger_a,1.1);
 wb_motor_set_position(finger_b,1.1);
 wb_motor_set_position(finger_c,1.1);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_A,0.4);
 wb_motor_set_position(pivot_B,1.2);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(finger_a,0.2);
 wb_motor_set_position(finger_b,0.2);
 wb_motor_set_position(finger_c,0.2);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_A,0);
 wb_motor_set_position(pivot_B,0);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(twister,-0);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_A,0.2);
 wb_motor_set_position(pivot_B,0.8);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(finger_a,1.1);
 wb_motor_set_position(finger_b,1.1);
 wb_motor_set_position(finger_c,1.1);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_A,0);
 wb_motor_set_position(pivot_B,0);
-wait_a_while(1.0,TIME_STEP);
+pause(1.0,TIME_STEP);
 end
 %wb_motor_set_position(twister,1.57);
 
@@ -93,9 +93,9 @@ end
 
 
 
-function wait_a_while(time_in_seconds,wait) 
+function pause(time_s,wait) 
  start_time = wb_robot_get_time();
-  while (start_time + time_in_seconds > wb_robot_get_time())
+  while (start_time + time_s > wb_robot_get_time())
     step(wait);
     end
 end
