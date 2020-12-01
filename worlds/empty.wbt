@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.0004755686801591049 0.9999431937163605 0.01064815358434812 1.2108508573860113
-  position 2.5751788413956085 -0.011509418892202028 1.4832324473805611
+  orientation -0.05028568814747452 -0.7993791838329349 -0.5987188572461417 3.02417947338975
+  position 1.014662387923923 0.6389110757094442 -0.3189137362801585
 }
 TexturedBackground {
 }
@@ -35,7 +35,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.71293 -0.11 0.067071
+  translation 0.73294 -0.09 -0.2129
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.02 0.02 0.02
@@ -77,7 +77,7 @@ ConveyorBelt {
   speed 0
 }
 SolidBox {
-  translation -0.22707 0 -0.382928
+  translation -0.22707 0 -0.102928
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(1)"
   size 0.02 0.02 0.02
@@ -93,7 +93,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 1.1 -0.12 -0.05
+  translation 0.97 -0.12 -0.05
   name "box(2)"
   size 0.02 0.02 0.02
   appearance PBRAppearance {
@@ -108,13 +108,23 @@ SolidBox {
   }
 }
 TinkerbotsBase {
-  translation 1.13 -0.06 -0.58
-  rotation 0 1 0 3.14159
+  translation 1.104 -0.07 -0.36
+  rotation 0 1 0 3.141592653589793
   name "Car(1)"
   controller "vehicle_1"
   leftSlot TinkerbotsCube {
-    upSlot TinkerbotsDistanceSensor {
-      rotation 0 0 1 -1.5707996938995747
+    upSlot TinkerbotsCube {
+      upSlot TinkerbotsCube {
+        leftSlot TinkerbotsCube {
+          upSlot TinkerbotsDistanceSensor {
+            translation 0 0.02 0.02
+            rotation 1 0 0 1.7016996938995748
+            name "dV"
+            numberOfRays 3
+            aperture 0.15
+          }
+        }
+      }
     }
   }
   backSlot TinkerbotsCube {
@@ -381,7 +391,7 @@ TinkerbotsBase {
         slot TinkerbotsPivot {
           name "pivot B"
           slot TinkerbotsGrabber {
-            rotation 0 0 1 -2.094395001079161
+            rotation 0 0 1 0.3927003061004253
             fingerASlot TinkerbotsFinger {
             }
             fingerBSlot TinkerbotsFinger {
@@ -523,18 +533,18 @@ ConveyorBelt {
   size 2 0.02 0.15
   borderThickness 0.005
   borderHeight 0.004
-  speed -0.5
+  speed -0.05
 }
 ConveyorBelt {
-  translation 0.01 -0.15 -0.32
+  translation 0.02 -0.15 -0.2
   name "conveyor belt(2)"
-  size 2 0.06 0.15
+  size 2 0.05 0.1
   borderThickness 0.001
   borderHeight -0.01
-  speed 0
+  speed 0.35
 }
 SolidBox {
-  translation 0.34 0 -0.33
+  translation 0.34 0 -0.13
   size 0.02 0.02 0.02
   appearance PBRAppearance {
     roughness 0.5
