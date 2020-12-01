@@ -12,6 +12,7 @@
 
 TIME_STEP = 64;
 
+
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
 % wb_camera_enable(camera, TIME_STEP);
@@ -38,7 +39,9 @@ TIME_STEP = 64;
 % and leave the loop when Webots signals the termination
 %
 while wb_robot_step(TIME_STEP) ~= -1
-dS=wb_distance_sensor_get_value(DS_L);
+ dS=wb_distance_sensor_get_value(DS_L);
+ Ds=wb_distance_sensor_get_value(DS_R);
+ disp(Ds)
  
 if dS < 45
 pause(2.0,TIME_STEP);
@@ -48,12 +51,12 @@ wb_motor_set_position(finger_a,1.1);
 wb_motor_set_position(finger_b,1.1);
 wb_motor_set_position(finger_c,1.1);
 pause(1.0,TIME_STEP);
-wb_motor_set_position(pivot_A,0.4);
 wb_motor_set_position(pivot_B,1.2);
+wb_motor_set_position(pivot_A,0.4);
 pause(1.0,TIME_STEP);
-wb_motor_set_position(finger_a,0.2);
-wb_motor_set_position(finger_b,0.2);
-wb_motor_set_position(finger_c,0.2);
+wb_motor_set_position(finger_a,0.1);
+wb_motor_set_position(finger_b,0.1);
+wb_motor_set_position(finger_c,0.1);
 pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_A,0);
 wb_motor_set_position(pivot_B,0);
@@ -71,24 +74,40 @@ wb_motor_set_position(pivot_A,0);
 wb_motor_set_position(pivot_B,0);
 pause(1.0,TIME_STEP);
 end
-%wb_motor_set_position(twister,1.57);
 
-%wait_a_while(2.0,TIME_STEP);
-%wb_motor_set_position(twister,0);
-%wait_a_while(2.0,TIME_STEP);
+if Ds < 45 
+pause(2.0,TIME_STEP);
+wb_motor_set_position(twister,1.57);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(finger_a,1.1);
+wb_motor_set_position(finger_b,1.1);
+wb_motor_set_position(finger_c,1.1);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(pivot_B,1.2);
+wb_motor_set_position(pivot_A,0.4);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(finger_a,0.1);
+wb_motor_set_position(finger_b,0.1);
+wb_motor_set_position(finger_c,0.1);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(pivot_A,0);
+wb_motor_set_position(pivot_B,0);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(twister,-0);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(pivot_A,0.2);
+wb_motor_set_position(pivot_B,0.8);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(finger_a,1.1);
+wb_motor_set_position(finger_b,1.1);
+wb_motor_set_position(finger_c,1.1);
+pause(1.0,TIME_STEP);
+wb_motor_set_position(pivot_A,0);
+wb_motor_set_position(pivot_B,0);
+pause(1.0,TIME_STEP);
+end
 
-
-  % read the sensors, e.g.:
-  %  rgb = wb_camera_get_image(camera);
-
-  % Process here sensor data, images, etc.
-
-  % send actuator commands, e.g.:
-  %  wb_motor_set_postion(motor, 10.0);
-
-  % if your code plots some graphics, it needs to flushed like this:
   drawnow;
-
 end
 
 
@@ -102,7 +121,5 @@ end
 function step(t) 
   if (wb_robot_step(t) == -1) 
     wb_robot_cleanup();
-
   end
   end
-% cleanup code goes here: write data to files, etc
