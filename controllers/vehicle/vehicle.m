@@ -34,7 +34,7 @@ D=wb_distance_sensor_get_value(c);
 if D > 51 & t==0
   wb_motor_set_position(motor_l,p);
   wb_motor_set_position(motor_r,p);
-  pause(0.3,TIME_STEP);
+  pause(0.1,TIME_STEP);
   p=p-1;
   end
   if D < 51
