@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.05028568814747452 -0.7993791838329349 -0.5987188572461417 3.02417947338975
-  position 1.014662387923923 0.6389110757094442 -0.3189137362801585
+  orientation 0.31785137746317915 -0.9087377161356303 -0.2704926341277309 4.815650988008935
+  position 2.118383642453367 0.845850036906656 0.16105793970915852
 }
 TexturedBackground {
 }
@@ -13,9 +13,6 @@ TexturedBackgroundLight {
 RectangleArena {
   translation 0.18 -0.14 -0.09
   floorSize 10 10
-}
-TinkerbotsBase {
-  name "Tinkerbots(2)"
 }
 SolidBox {
   translation 0.49293 0 0.507071
@@ -35,7 +32,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.73294 -0.09 -0.2129
+  translation 0.64294 -0.12 -0.0929057
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.02 0.02 0.02
@@ -46,7 +43,7 @@ SolidBox {
   }
   physics Physics {
     density 2
-    mass 0.007
+    mass 0.0075
     damping Damping {
     }
   }
@@ -63,7 +60,7 @@ SolidBox {
   }
   physics Physics {
     density 2
-    mass 0.007
+    mass 0.0075
     damping Damping {
     }
   }
@@ -93,7 +90,8 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.97 -0.12 -0.05
+  translation 0.66 -0.12 -0.03
+  rotation 0 0 1 0.785397
   name "box(2)"
   size 0.02 0.02 0.02
   appearance PBRAppearance {
@@ -102,7 +100,7 @@ SolidBox {
   }
   physics Physics {
     density 2
-    mass 0.007
+    mass 0.0075
     damping Damping {
     }
   }
@@ -391,7 +389,7 @@ TinkerbotsBase {
         slot TinkerbotsPivot {
           name "pivot B"
           slot TinkerbotsGrabber {
-            rotation 0 0 1 0.3927003061004253
+            rotation 0 0 1 2.094399693899575
             fingerASlot TinkerbotsFinger {
             }
             fingerBSlot TinkerbotsFinger {
@@ -529,7 +527,7 @@ TinkerbotsBase {
   ]
 }
 ConveyorBelt {
-  translation 0.02 -0.15 0.09
+  translation 0 -0.15 0.09
   size 2 0.02 0.15
   borderThickness 0.005
   borderHeight 0.004
@@ -541,10 +539,10 @@ ConveyorBelt {
   size 2 0.05 0.1
   borderThickness 0.001
   borderHeight -0.01
-  speed 0.35
+  speed 0.3
 }
 SolidBox {
-  translation 0.34 0 -0.13
+  translation 0.69 0 -0.13
   size 0.02 0.02 0.02
   appearance PBRAppearance {
     roughness 0.5
@@ -552,7 +550,7 @@ SolidBox {
   }
   physics Physics {
     density 2
-    mass 0.007
+    mass 0.0075
     damping Damping {
     }
   }
