@@ -1,21 +1,5 @@
-% MATLAB controller for Webots
-% File:          grabber_1.m
-% Date:
-% Description:
-% Author:
-% Modifications:
-
-% uncomment the next two lines if you want to use
-% MATLAB's desktop to interact with the controller:
-%desktop;
-%keyboard;
-
 TIME_STEP = 64;
 
-
-% get and enable devices, e.g.:
-%  camera = wb_robot_get_device('camera');
-% wb_camera_enable(camera, TIME_STEP);
   twister = wb_robot_get_device('twister');
   pivot_A = wb_robot_get_device('pivot A');
   pivot_B = wb_robot_get_device('pivot B');
@@ -34,47 +18,9 @@ TIME_STEP = 64;
   wb_motor_set_velocity(finger_c,speed);
   wb_distance_sensor_enable(DS_L,TIME_STEP);
   wb_distance_sensor_enable(DS_R,TIME_STEP);
-  % main loop:
-% perform simulation steps of TIME_STEP milliseconds
-% and leave the loop when Webots signals the termination
-%
-while wb_robot_step(TIME_STEP) ~= -1
- dS=wb_distance_sensor_get_value(DS_L);
- Ds=wb_distance_sensor_get_value(DS_R);
- disp(Ds)
- 
-if dS < 45
-pause(2.0,TIME_STEP);
-wb_motor_set_position(twister,-1.57);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(finger_a,1.1);
-wb_motor_set_position(finger_b,1.1);
-wb_motor_set_position(finger_c,1.1);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(pivot_B,1.2);
-wb_motor_set_position(pivot_A,0.4);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(finger_a,0.1);
-wb_motor_set_position(finger_b,0.1);
-wb_motor_set_position(finger_c,0.1);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(pivot_A,0);
-wb_motor_set_position(pivot_B,0);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(twister,-0);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(pivot_A,0.2);
-wb_motor_set_position(pivot_B,0.8);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(finger_a,1.1);
-wb_motor_set_position(finger_b,1.1);
-wb_motor_set_position(finger_c,1.1);
-pause(1.0,TIME_STEP);
-wb_motor_set_position(pivot_A,0);
-wb_motor_set_position(pivot_B,0);
-pause(1.0,TIME_STEP);
-end
 
+while wb_robot_step(TIME_STEP) ~= -1
+Ds=wb_distance_sensor_get_value(DS_L);
 if Ds < 45 
 pause(2.0,TIME_STEP);
 wb_motor_set_position(twister,1.57);
@@ -93,7 +39,7 @@ pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_A,0);
 wb_motor_set_position(pivot_B,0);
 pause(1.0,TIME_STEP);
-wb_motor_set_position(twister,-0);
+wb_motor_set_position(twister,0);
 pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_A,0.2);
 wb_motor_set_position(pivot_B,0.8);
@@ -111,7 +57,6 @@ end
 end
 
 
-
 function pause(time_s,wait) 
  start_time = wb_robot_get_time();
   while (start_time + time_s > wb_robot_get_time())
@@ -122,4 +67,4 @@ function step(t)
   if (wb_robot_step(t) == -1) 
     wb_robot_cleanup();
   end
-  end
+end
