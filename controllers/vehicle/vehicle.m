@@ -21,8 +21,8 @@ motor_r = wb_robot_get_device('motor_right');
 %  wb_camera_enable(camera, TIME_STEP);
 %  motor = wb_robot_get_device('motor');
  
-wb_motor_set_velocity(motor_l,4);
-  wb_motor_set_velocity(motor_r,4);
+wb_motor_set_velocity(motor_l,0);
+  wb_motor_set_velocity(motor_r,0);
   wb_distance_sensor_enable(c,TIME_STEP);
 
 % main loop:
@@ -34,7 +34,7 @@ D=wb_distance_sensor_get_value(c);
 if D > 51 & t==0
   wb_motor_set_position(motor_l,p);
   wb_motor_set_position(motor_r,p);
-  pause(0.3,TIME_STEP);
+  pause(0.1,TIME_STEP);
   p=p-1;
   end
   if D < 51
