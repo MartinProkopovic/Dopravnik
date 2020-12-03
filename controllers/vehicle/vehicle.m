@@ -23,8 +23,7 @@ motor_r = wb_robot_get_device('motor_right');
 %  wb_camera_enable(camera, TIME_STEP);
 %  motor = wb_robot_get_device('motor');
  
-wb_motor_set_velocity(motor_l,0);
-  wb_motor_set_velocity(motor_r,0);
+
   wb_distance_sensor_enable(c,TIME_STEP);
   wb_distance_sensor_enable(Dvs,TIME_STEP);
 
@@ -42,35 +41,29 @@ t = 0;
 end
 
 if f==1 & t==0
+wb_motor_set_velocity(motor_l,6);
+  wb_motor_set_velocity(motor_r,6);
 wb_motor_set_position(motor_l, p);
 wb_motor_set_position(motor_r, p);
 pause(0.01, TIME_STEP);
-o= o-1
+p= p-1
 D = wb_distance_sensor_get_value(c); 
 
-if D < 60 
+if D < 60
 t = 1;
 
 end
 
 end
 
-if D < 51 & t==1
+if D < 60 & t==1
+wb_motor_set_velocity(motor_l,3);
+  wb_motor_set_velocity(motor_r,3);
 wb_motor_set_position(motor_l,0);
 wb_motor_set_position(motor_r,0); 
 p=-1;
 f=0;
 end
-
-  % read the sensors e.g.:
-  %  rgb = wb_camera_get_image(camera);
-
-  % Process here sensor data, images, etc.
-
-  % send actuator commands, e.g.:
-  %  wb_motor_set_postion(motor, 10.0);
-
-  % if your code plots some graphics, it needs to flushed like this:
   drawnow;
 
 end
