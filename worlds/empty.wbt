@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.31785137746317915 -0.9087377161356303 -0.2704926341277309 4.815650988008935
-  position 2.118383642453367 0.845850036906656 0.16105793970915852
+  orientation -0.24374161083460205 -0.9436286094278483 -0.22395328668501074 1.5877593610286553
+  position -0.6829476102751454 0.5383110877124726 0.15346803414124593
 }
 TexturedBackground {
 }
@@ -15,7 +15,7 @@ RectangleArena {
   floorSize 10 10
 }
 SolidBox {
-  translation 0.49293 0 0.507071
+  translation 0.49293 0 0.547071
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(3)"
   size 0.02 0.02 0.02
@@ -32,7 +32,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.64294 -0.12 -0.0929057
+  translation 0.64294 -0.01 0.547094
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.02 0.02 0.02
@@ -61,6 +61,9 @@ SolidBox {
   physics Physics {
     density 2
     mass 0.0075
+    centerOfMass [
+      0 0 0
+    ]
     damping Damping {
     }
   }
@@ -68,7 +71,7 @@ SolidBox {
 ConveyorBelt {
   translation 0.02 -0.15 0.55
   name "conveyor belt(1)"
-  size 2 0.05 0.15
+  size 2 0.05 0.1
   borderThickness 0.001
   borderHeight -0.01
   speed 0
@@ -90,8 +93,8 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.66 -0.12 -0.03
-  rotation 0 0 1 0.785397
+  translation 0.500207 0.00020842 -0.03
+  rotation 0 0 1 0
   name "box(2)"
   size 0.02 0.02 0.02
   appearance PBRAppearance {
@@ -224,8 +227,18 @@ TinkerbotsBase {
   name "Car"
   controller "vehicle"
   rightSlot TinkerbotsCube {
-    upSlot TinkerbotsDistanceSensor {
-      rotation 0 0 1 1.5707996938995747
+    upSlot TinkerbotsCube {
+      upSlot TinkerbotsCube {
+        rightSlot TinkerbotsCube {
+          upSlot TinkerbotsDistanceSensor {
+            translation 0 0.02 0.02
+            rotation 1 0 0 1.7
+            name "Dv"
+            numberOfRays 3
+            aperture 0.15
+          }
+        }
+      }
     }
   }
   backSlot TinkerbotsCube {
@@ -542,7 +555,7 @@ ConveyorBelt {
   speed 0.3
 }
 SolidBox {
-  translation 0.69 0 -0.13
+  translation 0.69 0 -0.2
   size 0.02 0.02 0.02
   appearance PBRAppearance {
     roughness 0.5
