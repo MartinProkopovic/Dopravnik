@@ -39,17 +39,12 @@ if go==1 & r == 0
   wb_motor_set_position(e_right, o);
   wb_motor_set_position(e_left, o);
 stop(0.01, TIME_STEP);
-
   o= o-1;
   dist = wb_distance_sensor_get_value(dist_s);
     if dist < 60
   r = 1;
+  end 
   end
-  
-  end
-  
-
-
 if dist < 60 & r == 1
 wb_motor_set_position(e_right, 0);
 wb_motor_set_position(e_left, 0); 
