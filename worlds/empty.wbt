@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.24374161083460205 -0.9436286094278483 -0.22395328668501074 1.5877593610286553
-  position -0.6829476102751454 0.5383110877124726 0.15346803414124593
+  orientation -0.24036982812109725 0.9489005058425141 0.2044753670759763 1.654179676615891
+  position 1.6168921466240054 0.1117035318796047 0.3100739008317046
 }
 TexturedBackground {
 }
@@ -15,7 +15,7 @@ RectangleArena {
   floorSize 10 10
 }
 SolidBox {
-  translation 0.49293 0 0.547071
+  translation 0.49293 0 0.257071
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(3)"
   size 0.02 0.02 0.02
@@ -32,10 +32,10 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.64294 -0.01 0.547094
+  translation -0.89706 -0.01 0.357094
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
-  size 0.02 0.02 0.02
+  size 0.025 0.025 0.025
   appearance PBRAppearance {
     baseColor 0 0 0
     roughness 0.5
@@ -49,7 +49,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 1.10293 -0.12 0.45707
+  translation 0.27293 -0.12 0.227068
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(5)"
   size 0.02 0.02 0.02
@@ -69,12 +69,12 @@ SolidBox {
   }
 }
 ConveyorBelt {
-  translation 0.02 -0.15 0.55
+  translation 0.02 -0.15 0.37
   name "conveyor belt(1)"
   size 2 0.05 0.1
   borderThickness 0.001
   borderHeight -0.01
-  speed 0
+  speed 0.3
 }
 SolidBox {
   translation -0.22707 0 -0.102928
@@ -223,7 +223,7 @@ TinkerbotsBase {
   }
 }
 TinkerbotsBase {
-  translation 1.11 -0.07 0.72
+  translation 1.11 -0.07 0.53
   name "Car"
   controller "vehicle"
   rightSlot TinkerbotsCube {
@@ -555,8 +555,8 @@ ConveyorBelt {
   speed 0.3
 }
 SolidBox {
-  translation 0.69 0 -0.2
-  size 0.02 0.02 0.02
+  translation 0.69 0 -0.1
+  size 0.025 0.025 0.025
   appearance PBRAppearance {
     roughness 0.5
     metalness 0
