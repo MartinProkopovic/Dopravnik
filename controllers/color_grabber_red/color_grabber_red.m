@@ -39,21 +39,30 @@ wb_motor_set_position(finger_1,1.3);
 wb_motor_set_position(finger_2,1.3);
 wb_motor_set_position(finger_3,1.3);
 
-wb_motor_set_position(pivot_2,1.3);
-wb_motor_set_position(pivot_1,0.1);
+wb_motor_set_position(pivot_2,1);
+wb_motor_set_position(pivot_1,-0.5);
 
 Sens = wb_distance_sensor_get_value(D_R);
-if 600 > Sens 
+if 500 > Sens && Sens > 300
 m = 1;
 end
 if m == 1
-pause(1.65,TIME_STEP)
-wb_motor_set_position(finger_1,0);
-wb_motor_set_position(finger_2,0);
-wb_motor_set_position(finger_3,0);
+pause(1.2,TIME_STEP)
+wb_motor_set_position(pivot_2, 1.3);
+wb_motor_set_position(pivot_1, 0.1);
+wb_motor_set_position(finger_1,0.15);
+wb_motor_set_position(finger_2,0.15);
+wb_motor_set_position(finger_3,0.15);
 pause(1,TIME_STEP)
 wb_motor_set_position(pivot_2,0);
 wb_motor_set_position(pivot_1,0);
+pause(1,TIME_STEP)
+wb_motor_set_position(TW,-1.57);
+pause(2,TIME_STEP)
+wb_motor_set_position(finger_1,1.3);
+wb_motor_set_position(finger_2,1.3);
+wb_motor_set_position(finger_3,1.3);
+pause(1,TIME_STEP)
 end
 
 
