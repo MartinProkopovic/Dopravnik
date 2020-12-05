@@ -26,7 +26,8 @@ motor_r = wb_robot_get_device('motor_right');
 
   wb_distance_sensor_enable(c,TIME_STEP);
   wb_distance_sensor_enable(Dvs,TIME_STEP);
-
+wb_motor_set_velocity(motor_l,6);
+  wb_motor_set_velocity(motor_r,6);
 % main loop:
 % perform simulation steps of TIME_STEP milliseconds
 % and leave the loop when Webots signals the termination
@@ -35,30 +36,26 @@ while wb_robot_step(TIME_STEP) ~= -1
 D=wb_distance_sensor_get_value(c);
 E=wb_distance_sensor_get_value(Dvs);
 
-if E < 128
+if E < 1000
 f = 1;
 t = 0;
 end
 
 if f==1 & t==0
-wb_motor_set_velocity(motor_l,6);
-  wb_motor_set_velocity(motor_r,6);
 wb_motor_set_position(motor_l, p);
 wb_motor_set_position(motor_r, p);
-pause(0.01, TIME_STEP);
+pause(0.1, TIME_STEP);
 p= p-1
 D = wb_distance_sensor_get_value(c); 
 
-if D < 60
+if D < 75
 t = 1;
 
 end
 
 end
 
-if D < 60 & t==1
-wb_motor_set_velocity(motor_l,3);
-  wb_motor_set_velocity(motor_r,3);
+if D < 75 & t==1
 wb_motor_set_position(motor_l,0);
 wb_motor_set_position(motor_r,0); 
 p=-1;
