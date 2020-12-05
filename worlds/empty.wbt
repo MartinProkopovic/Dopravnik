@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.49718123657666907 0.8316310739124693 0.24738749948064723 5.420204871359666
-  position -0.2497851377329271 0.4403181752100376 0.8678177769846372
+  orientation 0.5289467295212668 0.8113495629110663 0.24885185169650123 5.4479428361259545
+  position -0.7934652401084 0.9115122993137769 1.5603985874966462
 }
 TexturedBackground {
 }
@@ -338,6 +338,7 @@ TinkerbotsBase {
         slot TinkerbotsPivot {
           name "pivot2"
           slot TinkerbotsGrabber {
+            rotation 0 0 1 1.5708003061004252
             fingerASlot TinkerbotsFinger {
             }
             fingerBSlot TinkerbotsFinger {
@@ -553,18 +554,4 @@ ConveyorBelt {
   borderThickness 0.001
   borderHeight -0.01
   speed 0.3
-}
-SolidBox {
-  translation 0.693 -0.06 0.257
-  size 0.025 0.025 0.025
-  appearance PBRAppearance {
-    roughness 0.5
-    metalness 0
-  }
-  physics Physics {
-    density 2
-    mass 0.0075
-    damping Damping {
-    }
-  }
 }
