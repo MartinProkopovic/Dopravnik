@@ -1,5 +1,4 @@
 TIME_STEP = 64;
-
   twister = wb_robot_get_device('twister');
   pivot_A = wb_robot_get_device('pivot A');
   pivot_B = wb_robot_get_device('pivot B');
@@ -21,7 +20,7 @@ TIME_STEP = 64;
 
 while wb_robot_step(TIME_STEP) ~= -1
 Ds=wb_distance_sensor_get_value(DS_R);
-dS=wb_distance_sensor_get_value(DS_L)
+dS=wb_distance_sensor_get_value(DS_L);
 if Ds < 45 
 pause(2.0,TIME_STEP);
 wb_motor_set_position(twister,1.57);
@@ -33,6 +32,22 @@ pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_B,1.2);
 wb_motor_set_position(pivot_A,0.4);
 pause(1.0,TIME_STEP);
+wb_motor_set_position(finger_a,0.9);
+wb_motor_set_position(finger_b,0.9);
+wb_motor_set_position(finger_c,0.9);
+pause(0.2,TIME_STEP);
+wb_motor_set_position(finger_a,0.7);
+wb_motor_set_position(finger_b,0.7);
+wb_motor_set_position(finger_c,0.7);
+pause(0.2,TIME_STEP);
+wb_motor_set_position(finger_a,0.5);
+wb_motor_set_position(finger_b,0.5);
+wb_motor_set_position(finger_c,0.5);
+pause(0.2,TIME_STEP);
+wb_motor_set_position(finger_a,0.3);
+wb_motor_set_position(finger_b,0.3);
+wb_motor_set_position(finger_c,0.3);
+pause(0.2,TIME_STEP);
 wb_motor_set_position(finger_a,0);
 wb_motor_set_position(finger_b,0);
 wb_motor_set_position(finger_c,0);
@@ -66,6 +81,22 @@ pause(1.0,TIME_STEP);
 wb_motor_set_position(pivot_B,1.2);
 wb_motor_set_position(pivot_A,0.4);
 pause(1.0,TIME_STEP);
+wb_motor_set_position(finger_a,0.9);
+wb_motor_set_position(finger_b,0.9);
+wb_motor_set_position(finger_c,0.9);
+pause(0.2,TIME_STEP);
+wb_motor_set_position(finger_a,0.7);
+wb_motor_set_position(finger_b,0.7);
+wb_motor_set_position(finger_c,0.7);
+pause(0.2,TIME_STEP);
+wb_motor_set_position(finger_a,0.5);
+wb_motor_set_position(finger_b,0.5);
+wb_motor_set_position(finger_c,0.5);
+pause(0.2,TIME_STEP);
+wb_motor_set_position(finger_a,0.3);
+wb_motor_set_position(finger_b,0.3);
+wb_motor_set_position(finger_c,0.3);
+pause(0.2,TIME_STEP);
 wb_motor_set_position(finger_a,0);
 wb_motor_set_position(finger_b,0);
 wb_motor_set_position(finger_c,0);
