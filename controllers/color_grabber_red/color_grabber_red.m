@@ -47,22 +47,25 @@ if 500 > Sens && Sens > 300
 m = 1;
 end
 if m == 1
-pause(1.2,TIME_STEP)
+pause(1.25,TIME_STEP)
 wb_motor_set_position(pivot_2, 1.3);
 wb_motor_set_position(pivot_1, 0.1);
-wb_motor_set_position(finger_1,0.15);
-wb_motor_set_position(finger_2,0.15);
-wb_motor_set_position(finger_3,0.15);
+wb_motor_set_position(finger_1,0);
+wb_motor_set_position(finger_2,0);
+wb_motor_set_position(finger_3,0);
 pause(1,TIME_STEP)
-wb_motor_set_position(pivot_2,0);
-wb_motor_set_position(pivot_1,0);
+wb_motor_set_position(pivot_2,-0.3);
+wb_motor_set_position(pivot_1,-0.3);
 pause(1,TIME_STEP)
 wb_motor_set_position(TW,-1.57);
 pause(2,TIME_STEP)
+wb_motor_set_position(pivot_2,0.3);
+pause(1,TIME_STEP)
 wb_motor_set_position(finger_1,1.3);
 wb_motor_set_position(finger_2,1.3);
 wb_motor_set_position(finger_3,1.3);
 pause(1,TIME_STEP)
+m = 0;
 end
 
 
@@ -71,7 +74,7 @@ end
 
 end
 
-% cleanup code goes here: write data to files, etc.
+
 function pause(time_s,wait) 
  start_time = wb_robot_get_time();
   while (start_time + time_s > wb_robot_get_time())
