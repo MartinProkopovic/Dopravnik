@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.41538445187285244 0.8755427253892402 0.24674013285290983 5.3001998606649385
-  position -1.7762241467262212 1.0944471108827112 1.8820904587553346
+  orientation 0.19976844701026178 -0.9386960357918525 -0.2809667595424226 4.1711682552296265
+  position 1.2965818079564755 0.1916331686006962 -0.37646252365354305
 }
 TexturedBackground {
 }
@@ -20,13 +20,43 @@ WoodenBox {
   size 0.5 0.15 0.3
   mass 20
 }
+WoodenBox {
+  translation -0.11 -0.110002 -0.04
+  rotation 0 0 1 4.692820414042842e-06
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 20
+}
+WoodenBox {
+  translation 0.11 -0.110002 -0.04
+  rotation 0 0 1 4.692820414042842e-06
+  name "wooden box(2)"
+  size 0.1 0.04 0.1
+  mass 20
+}
 SolidBox {
-  translation 0.61294 0 0.467094
+  translation 0.61294 0 -0.252906
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.025 0.025 0.025
   appearance PBRAppearance {
     baseColor 0.5 0 0
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 2
+    mass 0.0075
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.42294 0 0.297094
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(1)"
+  size 0.025 0.025 0.025
+  appearance PBRAppearance {
     roughness 0.5
     metalness 0
   }
@@ -65,25 +95,10 @@ ConveyorBelt {
   speed 0.4
 }
 TinkerbotsBase {
-  translation 1.104 -0.07 -0.74
+  translation 1.109 -0.07 -0.42
   rotation 0 1 0 3.141592653589793
   name "Car(1)"
   controller "vehicle_1"
-  leftSlot TinkerbotsCube {
-    upSlot TinkerbotsCube {
-      upSlot TinkerbotsCube {
-        leftSlot TinkerbotsCube {
-          upSlot TinkerbotsDistanceSensor {
-            translation 0 0.02 0.02
-            rotation 1 0 0 1.7016996938995748
-            name "dV"
-            numberOfRays 3
-            aperture 0.15
-          }
-        }
-      }
-    }
-  }
   backSlot TinkerbotsCube {
     leftSlot TinkerbotsCube {
       name "(1)"
@@ -177,6 +192,15 @@ TinkerbotsBase {
       }
     }
   }
+  extensionSlot [
+    DistanceSensor {
+      translation 0.09 0.03 -0.12
+      rotation 0 1 0 1.5708
+      scale 1.5 1.5 1.5
+      name "inf"
+      type "infra-red"
+    }
+  ]
 }
 TinkerbotsBase {
   translation 1.11 -0.07 0.62
@@ -281,7 +305,7 @@ TinkerbotsBase {
   ]
 }
 TinkerbotsBase {
-  translation -0.04 7.8366e-07 -0.06
+  translation -0.04 8.57124e-07 -0.04
   rotation -1 0 0 1.5708
   controller "color_grabber_red"
   leftSlot TinkerbotsCube {
@@ -292,7 +316,7 @@ TinkerbotsBase {
         slot TinkerbotsPivot {
           name "pivot2"
           slot TinkerbotsGrabber {
-            rotation 0 0 1 1.5708003061004252
+            rotation 0 0 1 1.9635
             fingerASlot TinkerbotsFinger {
             }
             fingerBSlot TinkerbotsFinger {
@@ -335,7 +359,7 @@ TinkerbotsBase {
   }
   extensionSlot [
     DistanceSensor {
-      translation 0.15 0.08 -0.09
+      translation 0.11 0.0799996 -0.09
       rotation 0 0 -1 -5.31e-06
       scale 2 2 2
       name "red"
@@ -502,7 +526,7 @@ TinkerbotsBase {
 }
 ConveyorBelt {
   translation 0 -0.15 0.09
-  size 2 0.045 0.15
+  size 2 0.045 0.09
   borderThickness 0.005
   borderHeight 0.004
   speed -0.05
