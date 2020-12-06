@@ -1,9 +1,3 @@
-% MATLAB controller for Webots
-% File:          vehicle_1.m
-% Date:
-% Description:
-% Author:
-% Modifications:
 
 TIME_STEP = 64;
 
@@ -17,7 +11,7 @@ go=0;
 e_right = wb_robot_get_device('engine_right');
 e_left = wb_robot_get_device('engine_left');
 dist_s = wb_robot_get_device('dist_sens');
-dVs = wb_robot_get_device('dV');
+dVs = wb_robot_get_device('inf');
 
 wb_motor_set_velocity(e_right, 5);
 wb_motor_set_velocity(e_left, 5);
@@ -28,7 +22,7 @@ while wb_robot_step(TIME_STEP) ~= -1
 
 dist = wb_distance_sensor_get_value(dist_s);
 vz = wb_distance_sensor_get_value(dVs);
-if vz < 128
+if vz < 1000
 go=1;
 r=0;
 end
@@ -41,11 +35,11 @@ if go==1 & r == 0
 stop(0.01, TIME_STEP);
   o= o-1;
   dist = wb_distance_sensor_get_value(dist_s);
-    if dist < 60
+    if dist < 65
   r = 1;
   end 
   end
-if dist < 60 & r == 1
+if dist < 65 & r == 1
 wb_motor_set_position(e_right, 0);
 wb_motor_set_position(e_left, 0); 
 o=-1;
