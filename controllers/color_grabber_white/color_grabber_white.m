@@ -1,39 +1,67 @@
-% MATLAB controller for Webots
-% File:          color_grabber_white.m
-% Date:
-% Description:
-% Author:
-% Modifications:
-
-% uncomment the next two lines if you want to use
-% MATLAB's desktop to interact with the controller:
-%desktop;
-%keyboard;
-
 TIME_STEP = 64;
-
-% get and enable devices, e.g.:
-%  camera = wb_robot_get_device('camera');
-%  wb_camera_enable(camera, TIME_STEP);
-%  motor = wb_robot_get_device('motor');
-
-% main loop:
-% perform simulation steps of TIME_STEP milliseconds
-% and leave the loop when Webots signals the termination
-%
+z= 0;
+W = wb_robot_get_device('w');
+finger_1 = wb_robot_get_device('grabber finger A');
+finger_2  = wb_robot_get_device('grabber finger B');
+finger_3  = wb_robot_get_device('grabber finger C');
+p_1 = wb_robot_get_device('p1');
+p_2 = wb_robot_get_device('p2');
+D_W = wb_robot_get_device('white');
+speed = 2;
+ wb_motor_set_velocity(W,speed);
+ wb_motor_set_velocity(finger_1,speed);
+ wb_motor_set_velocity(finger_2,speed);
+ wb_motor_set_velocity(finger_3,speed);
+ wb_motor_set_velocity(p_1,speed);
+ wb_motor_set_velocity(p_2,speed);
+ wb_distance_sensor_enable(D_W,TIME_STEP);
+ 
 while wb_robot_step(TIME_STEP) ~= -1
-
-  % read the sensors, e.g.:
-  %  rgb = wb_camera_get_image(camera);
-
-  % Process here sensor data, images, etc.
-
-  % send actuator commands, e.g.:
-  %  wb_motor_set_postion(motor, 10.0);
-
-  % if your code plots some graphics, it needs to flushed like this:
-  drawnow;
-
+COL = wb_distance_sensor_get_value(D_W);
+wb_motor_set_position(W,-1.57)
+pause(0.5,TIME_STEP)
+wb_motor_set_position(finger_1,1.3);
+wb_motor_set_position(finger_2,1.3);
+wb_motor_set_position(finger_3,1.3);
+wb_motor_set_position(p_2,1);
+wb_motor_set_position(p_1,-0.5);
+pause(0.5,TIME_STEP)
+COL = wb_distance_sensor_get_value(D_W);
+if 250 > COL && COL > 100
+z = 1;
 end
-
-% cleanup code goes here: write data to files, etc.
+if z == 1
+pause(0.75,TIME_STEP)
+wb_motor_set_position(p_2, 1.3);
+wb_motor_set_position(p_1, 0.1);
+pause(0.2,TIME_STEP)
+wb_motor_set_position(finger_1,0.2);
+wb_motor_set_position(finger_2,0.2);
+wb_motor_set_position(finger_3,0.2);
+pause(1,TIME_STEP)
+wb_motor_set_position(p_2,-0.3);
+wb_motor_set_position(p_1,-0.3);
+pause(1,TIME_STEP)
+wb_motor_set_position(W,1.57);
+pause(2,TIME_STEP)
+wb_motor_set_position(p_2,0.3);
+pause(1,TIME_STEP)
+wb_motor_set_position(finger_1,1.3);
+wb_motor_set_position(finger_2,1.3);
+wb_motor_set_position(finger_3,1.3);
+pause(1,TIME_STEP)
+z = 0;
+end
+  drawnow;
+end
+function pause(time_s,wait) 
+ start_time = wb_robot_get_time();
+  while (start_time + time_s > wb_robot_get_time())
+    step(wait);
+    end
+end
+function step(t) 
+  if (wb_robot_step(t) == -1) 
+    wb_robot_cleanup();
+  end
+end
