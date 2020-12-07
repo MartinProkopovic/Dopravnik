@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.19976844701026178 -0.9386960357918525 -0.2809667595424226 4.1711682552296265
-  position 1.2965818079564755 0.1916331686006962 -0.37646252365354305
+  orientation 0.022238974629702476 -0.7457294632787256 -0.6658776130832478 3.1263457915421
+  position 0.08457056741821345 3.193872384057129 -0.43157970875222273
 }
 TexturedBackground {
 }
@@ -15,27 +15,48 @@ RectangleArena {
   floorSize 10 10
 }
 WoodenBox {
-  translation 1.73637e-06 -0.07 -0.44
+  translation 0.280002 -0.0699995 -0.44
   rotation 0 0 1 4.692820414042842e-06
   size 0.5 0.15 0.3
   mass 20
 }
 WoodenBox {
-  translation -0.11 -0.110002 -0.04
+  translation -0.079998 -0.0700012 0.65
+  rotation 0 0 1 4.692820414042842e-06
+  name "wooden box(3)"
+  size 0.5 0.15 0.3
+  mass 20
+}
+WoodenBox {
+  translation -0.23 -0.110002 0.21
   rotation 0 0 1 4.692820414042842e-06
   name "wooden box(1)"
   size 0.1 0.1 0.1
   mass 20
 }
 WoodenBox {
-  translation 0.11 -0.110002 -0.04
+  translation 0.18 -0.110002 -0.04
+  rotation 0 0 1 4.692820414042842e-06
+  name "wooden box(4)"
+  size 0.1 0.1 0.1
+  mass 20
+}
+WoodenBox {
+  translation 0.39 -0.110002 -0.04
   rotation 0 0 1 4.692820414042842e-06
   name "wooden box(2)"
   size 0.1 0.04 0.1
   mass 20
 }
+WoodenBox {
+  translation -0.02 -0.110002 0.21
+  rotation 0 0 1 4.692820414042842e-06
+  name "wooden box(5)"
+  size 0.1 0.04 0.1
+  mass 20
+}
 SolidBox {
-  translation 0.61294 0 -0.252906
+  translation 0.61294 -0.06 -0.252906
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.025 0.025 0.025
@@ -68,7 +89,7 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.82293 -0.06 0.307068
+  translation 0.82293 -0.06 -0.402932
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(5)"
   size 0.025 0.025 0.025
@@ -87,7 +108,7 @@ SolidBox {
   }
 }
 ConveyorBelt {
-  translation 0.02 -0.15 0.46
+  translation 0.02 -0.15 0.44
   name "conveyor belt(1)"
   size 2 0.1 0.1
   borderThickness 0.001
@@ -203,7 +224,7 @@ TinkerbotsBase {
   ]
 }
 TinkerbotsBase {
-  translation 1.11 -0.07 0.62
+  translation 1.11 -0.07 0.61
   name "Car"
   controller "vehicle"
   backSlot TinkerbotsCube {
@@ -305,7 +326,7 @@ TinkerbotsBase {
   ]
 }
 TinkerbotsBase {
-  translation -0.04 8.57124e-07 -0.04
+  translation 0.25 8.57124e-07 -0.04
   rotation -1 0 0 1.5708
   controller "color_grabber_red"
   leftSlot TinkerbotsCube {
@@ -359,7 +380,7 @@ TinkerbotsBase {
   }
   extensionSlot [
     DistanceSensor {
-      translation 0.11 0.0799996 -0.09
+      translation 0.11 0.07 -0.09
       rotation 0 0 -1 -5.31e-06
       scale 2 2 2
       name "red"
@@ -368,17 +389,17 @@ TinkerbotsBase {
   ]
 }
 TinkerbotsBase {
-  translation -0.67 1.66519e-06 0.28
+  translation -0.16 1.44481e-06 0.22
   rotation -1 0 0 1.5708
   name "Tinkerbots(1)"
-  controller "color_grabber_red"
+  controller "color_grabber_white"
   leftSlot TinkerbotsCube {
     upSlot TinkerbotsCube {
       upSlot TinkerbotsPivot {
         rotation 0 0 1 1.5707996938995747
-        name "pivot1"
+        name "p1"
         slot TinkerbotsPivot {
-          name "pivot2"
+          name "p2"
           slot TinkerbotsGrabber {
             rotation 0 0 1 1.5708003061004252
             fingerASlot TinkerbotsFinger {
@@ -392,7 +413,7 @@ TinkerbotsBase {
       }
     }
     leftSlot TinkerbotsTwister {
-      name "tw"
+      name "w"
       slot TinkerbotsCube {
         leftSlot TinkerbotsCube {
           name "(1)"
@@ -428,10 +449,10 @@ TinkerbotsBase {
   }
   extensionSlot [
     DistanceSensor {
-      translation 0.15 0.08 -0.09
+      translation 0.13 -0.0700002 -0.09
       rotation 0 0 -1 -5.31e-06
       scale 2 2 2
-      name "red"
+      name "white"
       type "infra-red"
     }
   ]
