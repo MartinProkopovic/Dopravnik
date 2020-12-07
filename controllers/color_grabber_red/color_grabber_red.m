@@ -27,7 +27,7 @@ wb_motor_set_position(pivot_2,1);
 wb_motor_set_position(pivot_1,-0.5);
 pause(0.5,TIME_STEP)
 Sens = wb_distance_sensor_get_value(D_R);
-if 600 > Sens && Sens > 400
+if 1000 > Sens && Sens > 400
 m = 1;
 end
 if m == 1
