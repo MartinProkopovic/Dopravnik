@@ -8,7 +8,7 @@ TIME_STEP = 64;
   DS_L  = wb_robot_get_device('DS_L');
   DS_R  = wb_robot_get_device('DS_R');
 
-  speed = 2;
+  speed = 0;
   wb_motor_set_velocity(twister,speed);
   wb_motor_set_velocity(pivot_A,speed);
   wb_motor_set_velocity(pivot_B,speed);
