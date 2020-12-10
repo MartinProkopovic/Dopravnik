@@ -7,7 +7,7 @@ finger_3  = wb_robot_get_device('grabber finger C');
 p_1 = wb_robot_get_device('p1');
 p_2 = wb_robot_get_device('p2');
 D_W = wb_robot_get_device('white');
-speed = 2;
+speed = 0;
  wb_motor_set_velocity(W,speed);
  wb_motor_set_velocity(finger_1,speed);
  wb_motor_set_velocity(finger_2,speed);
