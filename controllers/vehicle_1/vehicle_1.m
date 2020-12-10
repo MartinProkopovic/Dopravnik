@@ -6,8 +6,8 @@ e_right = wb_robot_get_device('engine_right');
 e_left = wb_robot_get_device('engine_left');
 dist_s = wb_robot_get_device('dist_sens');
 dVs = wb_robot_get_device('inf');
-wb_motor_set_velocity(e_right, 5);
-wb_motor_set_velocity(e_left, 5);
+wb_motor_set_velocity(e_right,0);
+wb_motor_set_velocity(e_left, 0);
 wb_distance_sensor_enable(dist_s, TIME_STEP);
 wb_distance_sensor_enable(dVs, TIME_STEP);
 while wb_robot_step(TIME_STEP) ~= -1
