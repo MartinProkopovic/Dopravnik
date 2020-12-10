@@ -1,10 +1,11 @@
 #VRML_SIM R2020b utf8
 WorldInfo {
+  basicTimeStep 12
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.022238974629702476 -0.7457294632787256 -0.6658776130832478 3.1263457915421
-  position 0.08457056741821345 3.193872384057129 -0.43157970875222273
+  orientation 0.21428027743686756 -0.9133728162850558 -0.3461705665897734 4.049460080031702
+  position 2.185940812066512 1.3366876026962882 -0.9189069410021409
 }
 TexturedBackground {
 }
@@ -15,7 +16,7 @@ RectangleArena {
   floorSize 10 10
 }
 WoodenBox {
-  translation 0.280002 -0.0699995 -0.44
+  translation 0.480002 -0.0699989 -0.44
   rotation 0 0 1 4.692820414042842e-06
   size 0.5 0.15 0.3
   mass 20
@@ -35,14 +36,14 @@ WoodenBox {
   mass 20
 }
 WoodenBox {
-  translation 0.18 -0.110002 -0.04
+  translation 0.38 -0.110002 -0.04
   rotation 0 0 1 4.692820414042842e-06
   name "wooden box(4)"
   size 0.1 0.1 0.1
   mass 20
 }
 WoodenBox {
-  translation 0.39 -0.110002 -0.04
+  translation 0.59 -0.110002 -0.04
   rotation 0 0 1 4.692820414042842e-06
   name "wooden box(2)"
   size 0.1 0.04 0.1
@@ -56,7 +57,7 @@ WoodenBox {
   mass 20
 }
 SolidBox {
-  translation 0.61294 -0.06 -0.252906
+  translation 0.50294 0 -0.252906
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.025 0.025 0.025
@@ -67,13 +68,16 @@ SolidBox {
   }
   physics Physics {
     density 2
-    mass 0.0075
+    mass 0.007
+    centerOfMass [
+      0 0 0
+    ]
     damping Damping {
     }
   }
 }
 SolidBox {
-  translation 0.42294 0 0.297094
+  translation 0.22294 0 0.087088
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(1)"
   size 0.025 0.025 0.025
@@ -83,26 +87,7 @@ SolidBox {
   }
   physics Physics {
     density 2
-    mass 0.0075
-    damping Damping {
-    }
-  }
-}
-SolidBox {
-  translation 0.82293 -0.06 -0.402932
-  rotation 0 -1 0 -5.307179586466759e-06
-  name "box(5)"
-  size 0.025 0.025 0.025
-  appearance PBRAppearance {
-    roughness 0.5
-    metalness 0
-  }
-  physics Physics {
-    density 2
-    mass 0.0075
-    centerOfMass [
-      0 0 0
-    ]
+    mass 0.007
     damping Damping {
     }
   }
@@ -151,10 +136,6 @@ TinkerbotsBase {
             }
           }
         }
-        rightSlot TinkerbotsDistanceSensor {
-          rotation 0 0 1 -1.5707996938995747
-          name "dist_sens"
-        }
         backSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
           }
@@ -178,6 +159,10 @@ TinkerbotsBase {
         }
         upDSlot TinkerbotsCubieTriangle {
           rotation 0 0 1 1.5707996938995747
+        }
+        rightSlot TinkerbotsDistanceSensor {
+          rotation 0 0 1 -1.5707996938995747
+          name "dist_sens"
         }
         frontSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
@@ -215,9 +200,8 @@ TinkerbotsBase {
   }
   extensionSlot [
     DistanceSensor {
-      translation 0.09 0.03 -0.12
+      translation 0.129998 0.03 -0.13
       rotation 0 1 0 1.5708
-      scale 1.5 1.5 1.5
       name "inf"
       type "infra-red"
     }
@@ -246,6 +230,10 @@ TinkerbotsBase {
           upSlot TinkerbotsCubieTriangle {
             rotation 0 0 1 -1.5708003061004252
           }
+        }
+        rightSlot TinkerbotsDistanceSensor {
+          rotation 0 0 1 -1.5708003061004252
+          name "dsc"
         }
         backSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
@@ -282,10 +270,6 @@ TinkerbotsBase {
         upDSlot TinkerbotsCubieTriangle {
           rotation 0 0 1 1.5708003061004252
         }
-        rightSlot TinkerbotsDistanceSensor {
-          rotation 0 0 1 -1.5707996938995747
-          name "dsc"
-        }
         frontSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
           }
@@ -318,7 +302,7 @@ TinkerbotsBase {
   }
   extensionSlot [
     DistanceSensor {
-      translation -0.15 0.03 -0.11
+      translation -0.15 0.03 -0.12
       rotation 0 1 0 1.5708
       name "Dv"
       type "infra-red"
@@ -326,7 +310,7 @@ TinkerbotsBase {
   ]
 }
 TinkerbotsBase {
-  translation 0.25 8.57124e-07 -0.04
+  translation 0.45 8.57124e-07 -0.04
   rotation -1 0 0 1.5708
   controller "color_grabber_red"
   leftSlot TinkerbotsCube {
@@ -487,6 +471,8 @@ TinkerbotsBase {
         leftSlot TinkerbotsCube {
           name "(1)"
           backSlot TinkerbotsCube {
+            leftSlot TinkerbotsCube {
+            }
             rightASlot TinkerbotsCubieFemaleCube {
             }
             rightBSlot TinkerbotsCubieFemaleCube {
@@ -498,8 +484,6 @@ TinkerbotsBase {
             backSlot TinkerbotsDistanceSensor {
               name "DS_R"
               upSlot TinkerbotsCube {
-                leftSlot TinkerbotsCube {
-                }
                 rightASlot TinkerbotsCubieFemaleCube {
                 }
                 rightBSlot TinkerbotsCubieFemaleCube {
@@ -523,12 +507,12 @@ TinkerbotsBase {
             }
             leftDSlot TinkerbotsCubieFemaleCube {
             }
-            rightSlot TinkerbotsCube {
-            }
             frontSlot TinkerbotsDistanceSensor {
               rotation 0 0 -1 3.141592653589793
               name "DS_L"
               upSlot TinkerbotsCube {
+                leftSlot TinkerbotsCube {
+                }
                 rightASlot TinkerbotsCubieFemaleCube {
                 }
                 rightBSlot TinkerbotsCubieFemaleCube {
