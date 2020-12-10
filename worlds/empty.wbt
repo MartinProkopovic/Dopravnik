@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.022238974629702476 -0.7457294632787256 -0.6658776130832478 3.1263457915421
-  position 0.08457056741821345 3.193872384057129 -0.43157970875222273
+  orientation 0.21693700301574853 -0.9691901839371535 -0.11665643609510688 4.973237210664796
+  position 1.2339694357824722 0.2583754316083893 0.20898189357135927
 }
 TexturedBackground {
 }
@@ -56,7 +56,7 @@ WoodenBox {
   mass 20
 }
 SolidBox {
-  translation 0.61294 -0.06 -0.252906
+  translation 0.78294 -0.09 0.0870923
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(4)"
   size 0.025 0.025 0.025
@@ -336,13 +336,18 @@ TinkerbotsBase {
         name "pivot1"
         slot TinkerbotsPivot {
           name "pivot2"
-          slot TinkerbotsGrabber {
-            rotation 0 0 1 1.9635
-            fingerASlot TinkerbotsFinger {
-            }
-            fingerBSlot TinkerbotsFinger {
-            }
-            fingerCSlot TinkerbotsFinger {
+          slot TinkerbotsTwister {
+            slot TinkerbotsPivot {
+              name "pivot3"
+              slot TinkerbotsGrabber {
+                rotation 0 0 1 -0.9163003061004252
+                fingerASlot TinkerbotsFinger {
+                }
+                fingerBSlot TinkerbotsFinger {
+                }
+                fingerCSlot TinkerbotsFinger {
+                }
+              }
             }
           }
         }
@@ -380,11 +385,12 @@ TinkerbotsBase {
   }
   extensionSlot [
     DistanceSensor {
-      translation 0.11 0.07 -0.09
-      rotation 0 0 -1 -5.31e-06
+      translation 0.11 0.14 -0.09
+      rotation 1 0 0 1.5707996938995747
       scale 2 2 2
       name "red"
       type "infra-red"
+      aperture 0.5
     }
   ]
 }
