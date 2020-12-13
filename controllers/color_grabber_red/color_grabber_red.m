@@ -1,5 +1,6 @@
 TIME_STEP = 64;
 m = 0;
+  pc=0;
 TW = wb_robot_get_device('tw');
 finger_1 = wb_robot_get_device('grabber finger A');
 finger_2  = wb_robot_get_device('grabber finger B');
@@ -54,6 +55,8 @@ wb_motor_set_position(finger_2,1);
 wb_motor_set_position(finger_3,1);
 pause(1,TIME_STEP)
 m = 0;
+pc=pc+1;
+disp("Počet červených kociek "+pc);
 end
   drawnow;
 end

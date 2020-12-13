@@ -4,8 +4,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.242616432448804 -0.9482617823713015 -0.20478490862321247 4.636468200786003
-  position 2.7453486576606245 0.8394615646896784 -0.05723124533634388
+  orientation 0.414502888052848 -0.8378050841138509 -0.3553448984139655 4.5737753439581725
+  position 2.255082582380572 1.5423893120818433 0.17195207452305178
 }
 TexturedBackground {
 }
@@ -55,26 +55,6 @@ WoodenBox {
   name "wooden box(5)"
   size 0.1 0.04 0.1
   mass 20
-}
-SolidBox {
-  translation 0.78294 -0.03 -0.452906
-  rotation 0 -1 0 -5.307179586466759e-06
-  name "box(4)"
-  size 0.025 0.025 0.025
-  appearance PBRAppearance {
-    baseColor 0.5 0 0
-    roughness 0.5
-    metalness 0
-  }
-  physics Physics {
-    density 2
-    mass 0.007
-    centerOfMass [
-      0 0 0
-    ]
-    damping Damping {
-    }
-  }
 }
 SolidBox {
   translation 0.573 -0.03 -0.313
@@ -502,6 +482,22 @@ TinkerbotsBase {
       }
     }
   }
+  extensionSlot [
+    DistanceSensor {
+      translation 0.04 0.0400009 -0.11
+      rotation 0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+      name "ref2"
+      numberOfRays 2
+      aperture 0.2
+    }
+    DistanceSensor {
+      translation 0.04 -0.06 -0.11
+      rotation 0.5773509358560258 -0.577349935856137 -0.577349935856137 2.09439
+      name "ref"
+      numberOfRays 2
+      aperture 0.2
+    }
+  ]
 }
 ConveyorBelt {
   translation 0 -0.15 0
