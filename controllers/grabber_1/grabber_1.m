@@ -7,7 +7,8 @@ TIME_STEP = 64;
   finger_c  = wb_robot_get_device('grabber finger C');
   DS_L  = wb_robot_get_device('DS_L');
   DS_R  = wb_robot_get_device('DS_R');
-
+ ref  = wb_robot_get_device('ref');
+  ref2  = wb_robot_get_device('ref2');
   speed = 3;
   wb_motor_set_velocity(twister,speed);
   wb_motor_set_velocity(pivot_A,speed);
@@ -17,11 +18,15 @@ TIME_STEP = 64;
   wb_motor_set_velocity(finger_c,speed);
   wb_distance_sensor_enable(DS_L,TIME_STEP);
   wb_distance_sensor_enable(DS_R,TIME_STEP);
+    wb_distance_sensor_enable(ref,TIME_STEP);
+      wb_distance_sensor_enable(ref2,TIME_STEP);
 
 while wb_robot_step(TIME_STEP) ~= -1
 Ds=wb_distance_sensor_get_value(DS_R);
 dS=wb_distance_sensor_get_value(DS_L);
-if Ds < 45 
+r=wb_distance_sensor_get_value(ref);
+r2=wb_distance_sensor_get_value(ref2);
+if Ds < 45 || r<900
 pause(2.0,TIME_STEP);
 wb_motor_set_position(twister,1.57);
 pause(1.0,TIME_STEP);
@@ -73,7 +78,7 @@ pause(1.0,TIME_STEP);
 end
 
 
-if dS < 70
+if dS < 70 || r2<900
 pause(2.0,TIME_STEP);
 wb_motor_set_position(twister,-1.57);
 pause(1.0,TIME_STEP);
