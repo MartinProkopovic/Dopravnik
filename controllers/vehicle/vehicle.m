@@ -27,14 +27,14 @@ pause(0.1, TIME_STEP);
 p= p-1
 D = wb_distance_sensor_get_value(c); 
 
-if D < 75
+if D < 70
 t = 1;
 
 end
 
 end
 
-if D < 75 & t==1
+if D < 70 & t==1
 wb_motor_set_position(motor_l,0);
 wb_motor_set_position(motor_r,0); 
 p=-1;
@@ -54,7 +54,7 @@ end
 
 function step1(t) 
   if (wb_robot_step(t) == -1) 
-    wb_robot_cleanup();
+    
 
   end
   end

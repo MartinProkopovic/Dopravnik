@@ -73,7 +73,7 @@ pause(1.0,TIME_STEP);
 end
 
 
-if dS < 45
+if dS < 70
 pause(2.0,TIME_STEP);
 wb_motor_set_position(twister,-1.57);
 pause(1.0,TIME_STEP);
@@ -136,6 +136,6 @@ function pause(time_s,wait)
 end
 function step(t) 
   if (wb_robot_step(t) == -1) 
-    wb_robot_cleanup();
+    
   end
 end
