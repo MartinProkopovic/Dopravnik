@@ -1,11 +1,11 @@
 #VRML_SIM R2020b utf8
 WorldInfo {
-  basicTimeStep 8
+  basicTimeStep 10
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.414502888052848 -0.8378050841138509 -0.3553448984139655 4.5737753439581725
-  position 2.255082582380572 1.5423893120818433 0.17195207452305178
+  orientation 0.4160132758213606 -0.8846822343161138 -0.21040508222433454 5.065582640271749
+  position 3.428136725913001 1.806960539281571 1.2955271837338687
 }
 TexturedBackground {
 }
@@ -57,7 +57,7 @@ WoodenBox {
   mass 20
 }
 SolidBox {
-  translation 0.573 -0.03 -0.313
+  translation 0.603 -0.05 -0.313001
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(2)"
   size 0.025 0.025 0.025
@@ -68,7 +68,7 @@ SolidBox {
   }
   physics Physics {
     density 2
-    mass 0.007
+    mass 0.01
     damping Damping {
     }
   }
@@ -212,6 +212,7 @@ TinkerbotsBase {
     }
     rightSlot TinkerbotsCube {
       backSlot TinkerbotsMotor {
+        translation 0 0 0.001
         name "motor_left"
         upCSlot TinkerbotsCubieMaleCube {
           upSlot TinkerbotsCubieTriangle {
