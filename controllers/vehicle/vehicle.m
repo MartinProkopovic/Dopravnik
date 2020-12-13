@@ -24,7 +24,7 @@ if f==1 & t==0
 wb_motor_set_position(motor_l, p);
 wb_motor_set_position(motor_r, p);
 pause(0.1, TIME_STEP);
-p= p-1
+p= p-1;
 D = wb_distance_sensor_get_value(c); 
 
 if D < 70
