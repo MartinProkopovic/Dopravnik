@@ -54,7 +54,7 @@ end
 
 function step1(t) 
   if (wb_robot_step(t) == -1) 
-    wb_robot_cleanup();
+    
 
   end
   end
