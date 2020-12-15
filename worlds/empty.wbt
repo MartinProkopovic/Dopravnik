@@ -4,8 +4,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.4160132758213606 -0.8846822343161138 -0.21040508222433454 5.065582640271749
-  position 3.428136725913001 1.806960539281571 1.2955271837338687
+  orientation 0.5922165249558358 -0.8011955352738492 -0.08582133666218597 5.6400764461061526
+  position 1.5285799808829088 0.9890578971701757 2.295163624070788
 }
 TexturedBackground {
 }
@@ -15,6 +15,22 @@ RectangleArena {
   translation 0.18 -0.14 -0.09
   floorSize 10 10
 }
+ConveyorBelt {
+  translation -0.47 -0.15 0.31
+  name "conveyor belt(4)"
+  size 1 0.07 0.1
+  borderThickness 0.001
+  borderHeight -0.01
+  speed -0.3
+}
+ConveyorBelt {
+  translation -0.16 -0.15 -0.31
+  name "conveyor belt(3)"
+  size 1 0.07 0.1
+  borderThickness 0.001
+  borderHeight -0.01
+  speed -0.3
+}
 WoodenBox {
   translation 0.480002 -0.0699989 -0.52
   rotation 0 0 1 4.692820414042842e-06
@@ -22,7 +38,7 @@ WoodenBox {
   mass 20
 }
 WoodenBox {
-  translation -0.079998 -0.0700012 0.51
+  translation -0.209998 -0.0700009 0.51
   rotation 0 0 1 4.692820414042842e-06
   name "wooden box(3)"
   size 0.5 0.15 0.3
@@ -36,14 +52,14 @@ WoodenBox {
   mass 20
 }
 WoodenBox {
-  translation 0.38 -0.110002 -0.13
+  translation 0.15 -0.110002 -0.13
   rotation 0 0 1 4.692820414042842e-06
   name "wooden box(4)"
   size 0.1 0.1 0.1
   mass 20
 }
 WoodenBox {
-  translation 0.59 -0.110002 -0.13
+  translation 0.37 -0.110002 -0.13
   rotation 0 0 1 4.692820414042842e-06
   name "wooden box(2)"
   size 0.1 0.04 0.1
@@ -57,7 +73,7 @@ WoodenBox {
   mass 20
 }
 SolidBox {
-  translation 0.603 -0.05 -0.313001
+  translation 0.533 -0.06 0.306999
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(2)"
   size 0.025 0.025 0.025
@@ -74,7 +90,58 @@ SolidBox {
   }
 }
 SolidBox {
-  translation 0.22294 -0.08 -0.002912
+  translation 0.303 -0.12 0.307001
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(2)"
+  size 0.025 0.025 0.025
+  appearance PBRAppearance {
+    baseColor 0.5 0 0
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 2
+    mass 0.01
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.543 -0.06 -0.313001
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(2)"
+  size 0.025 0.025 0.025
+  appearance PBRAppearance {
+    baseColor 0.5 0 0
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 2
+    mass 0.01
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.413 -0.12 -0.313001
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(2)"
+  size 0.025 0.025 0.025
+  appearance PBRAppearance {
+    baseColor 0.5 0 0
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 2
+    mass 0.01
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.44294 -0.12 -0.312913
   rotation 0 -1 0 -5.307179586466759e-06
   name "box(1)"
   size 0.025 0.025 0.025
@@ -89,10 +156,58 @@ SolidBox {
     }
   }
 }
+SolidBox {
+  translation 0.34294 -0.12 0.307088
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(2)"
+  size 0.025 0.025 0.025
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 2
+    mass 0.01
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.38294 -0.12 -0.312912
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(2)"
+  size 0.025 0.025 0.025
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 2
+    mass 0.01
+    damping Damping {
+    }
+  }
+}
+SolidBox {
+  translation 0.39294 -0.12 0.307088
+  rotation 0 -1 0 -5.307179586466759e-06
+  name "box(2)"
+  size 0.025 0.025 0.025
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+  physics Physics {
+    density 2
+    mass 0.01
+    damping Damping {
+    }
+  }
+}
 ConveyorBelt {
-  translation 0 -0.15 0.31
+  translation 0.75 -0.15 0.31
   name "conveyor belt(1)"
-  size 2 0.07 0.1
+  size 0.5 0.07 0.1
   borderThickness 0.001
   borderHeight -0.01
   speed 0.3
@@ -100,7 +215,7 @@ ConveyorBelt {
 TinkerbotsBase {
   translation 1.109 -0.07 -0.49
   rotation 0 1 0 3.141592653589793
-  name "Car(1)"
+  name "Car1"
   controller "vehicle_1"
   backSlot TinkerbotsCube {
     leftSlot TinkerbotsCube {
@@ -176,7 +291,7 @@ TinkerbotsBase {
   }
   extensionSlot [
     DistanceSensor {
-      translation 0.129998 0.01 -0.13
+      translation 0.129998 0.01 -0.14
       rotation 0 1 0 1.5708
       name "inf"
       type "infra-red"
@@ -265,7 +380,7 @@ TinkerbotsBase {
   ]
 }
 TinkerbotsBase {
-  translation 0.45 5.26536e-07 -0.13
+  translation 0.22 5.26536e-07 -0.13
   rotation -1 0 0 1.5708
   controller "color_grabber_red"
   leftSlot TinkerbotsCube {
@@ -508,9 +623,9 @@ ConveyorBelt {
   speed -0.05
 }
 ConveyorBelt {
-  translation 0 -0.15 -0.31
+  translation 0.75 -0.15 -0.31
   name "conveyor belt(2)"
-  size 2 0.07 0.1
+  size 0.5 0.07 0.1
   borderThickness 0.001
   borderHeight -0.01
   speed 0.3
