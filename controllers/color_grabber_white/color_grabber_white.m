@@ -38,7 +38,7 @@ if z == 1
 pause(0.85,TIME_STEP)
 wb_motor_set_position(p_2, 1.4);
 wb_motor_set_position(p_1, 0.1);
-pause(0.2,TIME_STEP)
+pause(0.5,TIME_STEP)
 wb_motor_set_position(finger_1,0.2);
 wb_motor_set_position(finger_2,0.2);
 wb_motor_set_position(finger_3,0.2);
