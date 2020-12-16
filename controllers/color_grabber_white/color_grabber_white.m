@@ -25,7 +25,7 @@ wb_motor_set_position(finger_2,1.3);
 wb_motor_set_position(finger_3,1.3);
 wb_motor_set_position(p_2,1);
 wb_motor_set_position(p_1,-0.5);
-pause(0.5,TIME_STEP)
+wb_robot_step(500);
 COL = wb_distance_sensor_get_value(D_W);
 end 
 while wb_robot_step(z==0)
@@ -35,38 +35,28 @@ z = 1;
 end
 end
 if z == 1
-pause(0.85,TIME_STEP)
+wb_robot_step(850);
 wb_motor_set_position(p_2, 1.4);
 wb_motor_set_position(p_1, 0.1);
-pause(0.5,TIME_STEP)
+wb_robot_step(300);
 wb_motor_set_position(finger_1,0.2);
 wb_motor_set_position(finger_2,0.2);
 wb_motor_set_position(finger_3,0.2);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(p_2,-0.3);
 wb_motor_set_position(p_1,-0.3);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(W,1.57);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(p_2,1.1);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(finger_1,1);
 wb_motor_set_position(finger_2,1);
 wb_motor_set_position(finger_3,1);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 z = 0;
 pb=pb+1;
 disp("Počet bielych kociek "+pb);
 end
   drawnow;
-end
-function pause(time_s,wait) 
- start_time = wb_robot_get_time();
-  while (start_time + time_s > wb_robot_get_time())
-    step(wait);
-    end
-end
-function step(t) 
-  if (wb_robot_step(t) == -1) 
-  end
 end
