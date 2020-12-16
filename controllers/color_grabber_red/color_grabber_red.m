@@ -35,7 +35,7 @@ m = 1;
 end
 end
 if m == 1
-wb_robot_step(850);
+wb_robot_step(920);
 wb_motor_set_position(pivot_2, 1.3);
 wb_motor_set_position(pivot_1, 0.1);
 wb_robot_step(300);
