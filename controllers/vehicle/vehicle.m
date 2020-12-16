@@ -23,7 +23,7 @@ end
 if f==1 & t==0
 wb_motor_set_position(motor_l, p);
 wb_motor_set_position(motor_r, p);
-pause(0.1, TIME_STEP);
+wb_robot_step(100);
 p= p-1;
 D = wb_distance_sensor_get_value(c); 
 
@@ -43,18 +43,3 @@ end
   drawnow;
 
 end
-
-function pause(time_s,wait) 
- start_time = wb_robot_get_time();
-  while (start_time + time_s > wb_robot_get_time())
-    step1(wait);
-    end
-    
-end
-
-function step1(t) 
-  if (wb_robot_step(t) == -1) 
-    
-
-  end
-  end
