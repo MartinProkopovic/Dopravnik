@@ -25,7 +25,7 @@ wb_motor_set_position(finger_2,1.3);
 wb_motor_set_position(finger_3,1.3);
 wb_motor_set_position(pivot_2,1);
 wb_motor_set_position(pivot_1,-0.5);
-pause(0.5,TIME_STEP)
+wb_robot_step(500);
 Sens = wb_distance_sensor_get_value(D_R);
 end
 while wb_robot_step(m==0)
@@ -35,38 +35,28 @@ m = 1;
 end
 end
 if m == 1
-pause(0.85,TIME_STEP)
+wb_robot_step(850);
 wb_motor_set_position(pivot_2, 1.3);
 wb_motor_set_position(pivot_1, 0.1);
-pause(0.3,TIME_STEP)
+wb_robot_step(300);
 wb_motor_set_position(finger_1,0.2);
 wb_motor_set_position(finger_2,0.2);
 wb_motor_set_position(finger_3,0.2);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(pivot_2,-0.3);
 wb_motor_set_position(pivot_1,-0.3);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(TW,-1.57);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(pivot_2,1.1);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 wb_motor_set_position(finger_1,1);
 wb_motor_set_position(finger_2,1);
 wb_motor_set_position(finger_3,1);
-pause(1,TIME_STEP)
+wb_robot_step(500);
 m = 0;
 pc=pc+1;
 disp("Počet červených kociek "+pc);
 end
   drawnow;
-end
-function pause(time_s,wait) 
- start_time = wb_robot_get_time();
-  while (start_time + time_s > wb_robot_get_time())
-    step(wait);
-    end
-end
-function step(t) 
-  if (wb_robot_step(t) == -1) 
-  end
 end
