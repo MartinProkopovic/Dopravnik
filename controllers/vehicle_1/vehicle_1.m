@@ -20,7 +20,7 @@ end
 if go==1 & r == 0
   wb_motor_set_position(e_right, o);
   wb_motor_set_position(e_left, o);
-stop(0.01, TIME_STEP);
+  wb_robot_step(10);
   o= o-1;
   dist = wb_distance_sensor_get_value(dist_s);
     if dist < 65
@@ -37,20 +37,3 @@ end
   drawnow;
 
 end
-
-function stop(time, hold) 
-
- start = wb_robot_get_time();
- 
-  while (start + time > wb_robot_get_time())
-    step(hold);
-    end
-    
-end
-function step(t) 
-
-  if (wb_robot_step(t) == -1) 
-    
-  end
-  
-  end
